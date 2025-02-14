@@ -1,0 +1,31 @@
+ 1. Information Finder Version 2.0
+if we provide a department name we would like to see:
+a.who is workking in the depaartment
+b.What are their salaries
+c. Age etc
+in a seperate tab
+
+on our excel sheet.
+- If we put a department name in the cell we would like to see:
+a.The people working in the department
+b.Their salary
+c.What is their rate 
+in a descending order, the highest salary at the top and the lowest to the bottom
+apart from that we want to know how many people are there
+We will use filter function-in my excel is myfilter
+
+C5 in thr video case is the "SALES"
+=FILTER(staff, staff[Department]=C5)- thhis is going to return values only from the sales department
+But we dont want all the columns,
+we want the name, salary and rating column, so we are goint to number all the columns
+-so we want column 1,4 and 7 of the data
+
+instead of filtering , we want to choose the columns using "CHOOSE FUNCTION"
+=CHOOSECOLS(FILTER(),1,7,4)
+This will shrick the table and rearrange in this order
+Once this is in, we want to sort the data by the highest salary, so that, the highest salary goes to the top
+using the "SORT" function. by the second(2)Column(salary) in descending order(which is: -1)
+=SORT(CHOOSECOLS(FILTER();1;4;7);2;-1)
+
+WE'd now like to count the number of people which are there
+=COUNTIFS(staff[Department],sales/B5)

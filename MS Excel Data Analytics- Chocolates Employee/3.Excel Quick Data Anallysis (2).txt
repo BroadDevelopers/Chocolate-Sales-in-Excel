@@ -1,0 +1,36 @@
+1. Quick analysis of the data to understand what we got from the combined data
+- we can do this with :
+a. Pivot tables
+or
+b. Formulas
+
+2.-We will be using formulas in order to learn excel functions.
+we are going to build our formulas on the same page as the combined data 
+but it is adviced to build this on a seperate page or tab.
+
+The things we want to calculate are:
+a.Count of employess
+two functions we can use:
+Count-for integers
+CountA-for string
+=COUNTA(click on name column)
+
+b.average salary
+=Average(Salaryy Column)
+c.Average age
+d.Average Tenure(Tenure is how long an employee has been working with us by using joined date)
+add a tenure column to the table- write tenure to the end of the table and hit enter
+Tenure is= Current date(Using today() funtion) - joined date
+the tebure will be interms of date, but we can select the column and change the formato to general
+Home->Number->General but we want to get years so its going to be
+
+=(Today()-Date Joined)/365=year=change to number formatting
+
+e. Female ratio %
+well do this in two steps:
+first we want to know how many gender counts are females using COUNTIFS function.
+COUNTIFS(staff[Gender],"Female") = count
+Ration= female count/count of employees(Ctrl + Shift + 5 to apply percentage on this)
+
+
+

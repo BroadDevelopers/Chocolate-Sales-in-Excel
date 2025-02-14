@@ -1,0 +1,16 @@
+1. Quick Data Analysis
+-whoo are these people 
+-how many are there
+-quick stats about them
+2. We would like to build an information finder
+-Havign to insert a name in a field for an employee and you will know everything about them
+3. We want to extend the informationfinder so that we can 
+ask about a department and get the entire reasons of that department
+as a clean view
+4, Male vs Female comparison of the data
+4.Calculate annual bonus to all of our staff
+- we want to build a bonus calculator using excel and understand the process of calculating
+the bonus based on the employee data
+
+We are going to learn excel funtions, pivot tables etc.....
+after this we will do analysis using a different set of questions

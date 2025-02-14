@@ -1,0 +1,49 @@
+- We would like to do a quick male vs female comparison
+-And understand how many people are there based on these gender groups
+-what is their average age/salary/......
+-We can't use formulas to do this as we have already use formulas
+
+-so we are going to use pivot tables for this analysis:
+a. Go to the dataset->click any cell->insert(navbar)->
+Pivot Tables
+-Window:Existing worksheet/new worksheet->(check)Add data to the data models(This enables some important feautures in our pivot table that helps us answer some important wuestions quickly)
+-click ok
+
+A pivot Table Canvas will appear.
+-A field option(Name,Gender,Age,Rating) will appear which we can use to construct the table
+-Pivot Table is a quick and easy reporting system, these can be used to answer business quetions or build reports quickly
+
+-On OUR pivot table we want:
+a.Two columns: One for male and one for female
+b.Then we would like to see how many people are there and what is their average age etc
+
+1.-Columns Field: Insert Gender
+we now want to see how many people are the, it could be a count on the name coulumn
+2. Values Field : Insert Name - This will count the name
+now we want to count the Average age
+3.Values Field : Insert Age
+by default excel is going to sum the age of females and males because age is in a number format
+The sum is useless so we are going to change it to average
+right click on the sum age cell->summarize values by-> Average
+
+
+We can see that the table is growing horizontally but what we want is
+count in one row and average in next row.
+-in the columns field->drag values to rows
+
+4. inset salary into the values field->summarize by average
+5. Insert tenure inside values field
+
+--Now that we have all the information--
+Lets see how we can remove all the other genders and remain with male and female
+-To do this:
+click on the column labels arrow on the table->>uncheck the other genders
+
+6. Now we want to apply some quick formatting
+right click the cell you want to format(eg aerage age of female)->number formatt->number->1 decimal place->click ok
+
+7. IF you dont want the grand total
+Click the column->Design->Grand total->Off for row and columns
+
+8 Now we want to create a slicer from the country option
+country->right click->add as a slicer

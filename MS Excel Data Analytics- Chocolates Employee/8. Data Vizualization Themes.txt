@@ -1,0 +1,23 @@
+-Weve no answered business questions
+-Lets now understand how to use charts and other data business visualization tools in excel
+to do data analsysis
+-We've got 4 topics in this section:
+
+1. Analyze Salary Spread
+-How the salary is spread
+-How the distribution looks like
+-Are there extreme values or not
+
+2.Relationship between salary and employee rating.
+-Is there any relationship between salary and employee rating?
+eg, are exceptional people getting paid more
+or are the poor people getting paid more
+
+3.Company Growth Over Time.
+-How did our company grow? from the first employee to the 186 employee
+-What was the account like over a period of time
+-Where is it heading?
+
+4.Regional Scorecard
+-We would like to creat a india vs newzeland reportcard, to compare both countries and understand
+various key statistics and business metrics from the HR perspective

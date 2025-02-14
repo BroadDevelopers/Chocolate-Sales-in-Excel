@@ -1,0 +1,7 @@
+1. Using excel in general
+2.Power Query- Data Management and Data Cleaning
+3.Using simple and complex formulaes for data analysis and answering business questions
+4.Using pivot tables for data structuring and calculating various types of outcomes
+5.Creating and formatting excel charts
+6.How to use data validation, slicers, conditional formatting....etc
+

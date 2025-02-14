@@ -1,0 +1,77 @@
+1. Understanding salary spread using histograms and box plots
+A.
+how to do this:
+-Select Salary column->Home->conditional formatting->Color Scale->Green:high salaries to Red:low salries
+but we are going to use-> blue to red.
+-to get s visual sense-> we are goign to sort _>smallest to largest
+
+NEXT STEP WITH THE SALARY is to STATISTICALLY DO THE ANALYSIS
+-select salary column->insert(NavBar)->charts->statistics chart->histogram
+this will give a histogram of our salary spread
+-We are going to remove the x-axis because it has no meaning
+x-axis->ctrl 1(to format it)->  change from automatic bins to bin-width:10 000->Underflow-bin:40 000
+what this will do is this the distribution will go from 40-50,50-60....
+
+b.What else can we do to understand the salary spread
+select salary column->insert->charts->box plot
+-This show the entrire salary in a box plot diagram.
+- We we will cut the box plot(box and whisker) and paste onto the salary spread sheet and explain what it is trying to do
+-Box Plot shows:
+The entire salary as a box, with the up and below whiskers, 
+The middle line inside the box: is the median
+The X mark inside the box: is the Average
+-The box above the midpoint/media is the 75th percentile
+The box below the midpoint is the 25th percentile
+-Make sure on the formatting that "show outlier" is checked
+
+2. Salary Vs Rating
+-Now lets answer the next question, is there a relationship between the ratings and the salary of an employee
+-We are going to do this in two ways, through:
+a. Pivot Table
+add new worksheet->salary vs rating
+select All staff table->inserrt(navbar)->pivot table
+insert rating into-> rows, name ->values, salary->values
+on pivot table->right click sum of salary-> change into average salary
+drag exception aboe, above average
+apply number formatting to average salary-> o decimal places-> tot see the numbers better
+-on the average salary->navbar(home)->conditional formatting->Data Bar->Blue Data Bar->
+
+b.Chart
+-Since we our ratings are text, we need to map them to numeric values
+1.Copy all the rating on a new worksheet
+Exceptional 5
+Above average 4
+Average 3
+Poor 2
+Very poor 1
+-Then we are going to creaate a new column called "Rating as a number" on the ALL staff table
+then we are going to calculate what is rating as a number using XLOOKUP
+XLOOKUP(click-average(ALLstaff),select(new woeksheet)ratings as text, select(workshhet)ratings as numebrs)
+then press f4 to change the formatting to $B$3, gor worksheet ratings
+format by removing the zeros
+- Now that we have salary as a number and rating as number:
+A quick way to visualize this is to use a scatter plot
+select the salary colunm hold ctrl select the rating column-Insert(Navbar)
+->scatter plot-Cut it(ctrl + X) ->move to our pivot table(rating vs salary)
+
+3.Number Of People-> How has our company grown in terms of number of people
+-We would like to see a trend of date joint and how many people have joined on each date as a trend
+-One simple way to do this is to take the date joined and then plot the hed count againgst it we will get an idea
+but this is not going to give us much, istead
+we are going to use pivot tables and build thhis slowly
+-Well start by insterting a pivot table from our data model
+-we will be using the ALL staff table
+Rows:date joined
+Names:Values
+insert a line chart: The problem with the line chart is that it doesnt show the growth of the company
+- A good way to visualiza what we want is to get cumulative totals
+that is running total of numbers over the entire period of time
+-right click on the count name->show values as->Running total in
+
+we are goign to calculate our running total:
+Month
+Headcount
+Running totals. 
+those are our columns.
+Month
+=SEQUENCE(36

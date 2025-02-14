@@ -1,0 +1,23 @@
+1. We want to build an information finder for if we type in an employee
+we will see the entire details for that indiidual.
+-This type of operation is called looking up: We can use the "lookup" function for this
+-Two types of Lookup function:
+
+we want to look up : Barr Faughny
+
+a.XLOOKUP
+Lets say the name is in cell: L17
+=XLOOKUP(Name,Table where the name is-column, What we want want from the table)
+=XLOOKUP(L17,STAFF[Name],Staff[[Gender]:[Tenure]])
+we can put the Xloopup inside of transpose in order to view the retrieved information in a vertical manner
+TRANSPOSE(XLOOKUP())
+This is dynamic, if you want to find another individuals details, you just type in their name on L17 cell
+
+b.VLOOKUP
+vlookip(position of name : L7, table ,which column: 7, exact match: False)
+=VLOOKUP(L17,staff,7,FALSE)
+
+
+
+- we can also do it manually by just filtering from the name column
+but this is too manual if the name changes you have to change the filter again

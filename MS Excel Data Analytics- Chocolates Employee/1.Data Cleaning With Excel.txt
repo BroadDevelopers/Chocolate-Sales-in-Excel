@@ -1,0 +1,98 @@
+NEWZWLAND STAFF TABLE
+1.Turn the data into tables.
+change name of table->design->table name(Navbar):Newzeland Staff
+Click on any cell->Ctrl+A->Then Ctrl+T(for table)
+2.Make the table display averages.
+Clcick a cell-> Navbar-design->Click "total row"
+3.Get Averages.
+-On the bottom of the page go to:
+salary and filter on the total to averages, then change the values to
+dollars by Cntl+Shift+4
+-Get the average age
+4.Dates
+Some of the date is in number format and this is because by default excel stores date data in number format
+what it means is the data is 44446 days since the start of excel calendar
+excel cander starts on 1st of jabuary 1900
+- select all the number formated date -> presss-> Ctrl+Shift+3 to turn into date formatting
+5. Data Cleaning : Finding duplicate entries
+-We can tell if a name has repeated or not using a fileter
+This i where we need to pick the entrire column by just hovering on the column until we see a black mouse cursor
+then click to select the column:
+-> go to "HOME"->condional formatting->Highlight cells Rules->Duplicate Values
+The red highlighted values will be the duplicates
+
+How do we fix this?:
+Highlight one set of the duplicates(But we do still need to keep one of these rows but we can delete the second occurance),
+we can do this manually by using the "Data -ribbon remove duplicate" but we are not going to use this because we need to solve
+this problem for both newzeland staff data and indian staff data
+
+6.Combining all the data(Power Query)
+Now we are going to combine indian and newzeland data into one consolidated table
+this will be the table we will use to do our data analysis
+TO DO THIS:
+Data(Navbar)->Get and Transform Data(PowerQuery ).
+
+1st: Lets load the NWZ data into power_query
+ select any cell->Data->Data and transformation->From Table/Range
+This will load our table into powerquery
+-PowerQuery is a Data Preprocessing Engine that we can use to tell eexcel:
+a. How we would like our data to be clean
+b.What additional operations we want to do on our data etc
+- We now have the NWZ data in power query now we would like to add the indian data into power query so that we can combine
+both of the data
+-On the left-queries:duplicate the nzw data
+-In the duplicate nzw data: in the formulae bar where it saays:
+Click source: Then change on the formulae bar:
+= Excel.CurrentWorkbook(){[Name="NZW_staff"]}[Content]
+to
+= Excel.CurrentWorkbook(){[Name="india_staff"]}[Content]
+
+--Before we combine the data lets add a column in the nwz data to show that this is actually newzeland people
+to do this:
+Navbar-Add-column->Custom Column->New Column name: Country->Custom column formulae:NZ->press ok
+this is a way to make us know that this is newzeland data
+-- Do the same for indian data
+
+--Now we have two tables but we want one table by combining the tables
+Appendic Operation: An operation where you take twodata sets with similar column structure
+and append them, one underneth another.
+Nacbar->Home->append queries dropdown->append queries as new
+->First_table:indian staff->Second_table:nwz_staff-> press ok
+
+A third appended query will form called apend_one->rename to staff.
+
+7. Data Cleaning in Power Query just after appending the tables.
+-1st Cleanup Activity: Check the first column(Name) for duplicates
+to do this:
+select the column->right_click->Remove Duplicate
+(This could be dangerous in large datasets, in a large company there may be individual with the same name but in this data theres only one individual
+if you have such a duplication you might want to pick a column like employee_id/or any other number to remove duplicates)
+
+2nd: Dealing with "Null" gender values
+Every time a gender value is missing we want to put the value as other genders
+To do this:
+-We can use a replacement type of step with in powerquery:
+select genedr column->right click:replace vales-> value to find: null-> Replace with:Other
+
+3rd: Now we are going to look at the date joined column
+The green bar doesn't go all the way to the end indicating that there is a blank valeu
+There is somebody without a date joint(Null from the drop down menu)
+In a data analysis view point, if an employee doesnt have a date, they shouldnt ven be in our data
+-Unslect everything and click the null value- this is due to our grand total row
+from applied steps, remove filter step and uncheck the null value
+
+At this point this is our final data, this is the data we can go and do our data analysis on.
+
+Home->Close and Load to....->only create a connection-Press ok
+this will load all the queries.
+
+Now creat a new tab in excel called : ALL Staff-> Right click->change color to yellow
+in ALL Staff we want to load the staff table there so we are going to do this by
+right click on "staff"->load to...->select how you want....:Table->Where do you want to put...?:Existing worksheet:
+
+editing the date in power query
+right click staff->edit->right click date->Change type:Date->close and load
+
+
+
+

@@ -1,0 +1,21 @@
+Bonus Calculation.
+We will do all of this on our ALL staff data
+
+-We would like to give 3% bonus on salary, so whatever is your salary
+your bonus will be 3% of that assuming you have be with the organization for
+at least 2 years, if not your bonus will be 2%.
+
+- We can calculate the new bonus as a new column.
+if tenure>2 then bonus =3% else 2%
+= IF([@Tenure]>2, 3%,2%)
+Then we take the percentage and multiply by the salary
+= IF([@Tenure]>2, 3%,2%)*staff[@salary]
+-We can roundup to no more deciamal point/zero(0)
+=ROUNDUP(IF([@Tenure]>2, 3%,2%)*staff[@salary],0)
+apply the currency formatting
+then remove the zeros 
+
+1. What if the manager come and ask for the people who had the top ten bonuses
+we can write calculation
+but the fastest way is to:
+Go to the Bonus arrow->Number Filters->Top 10
